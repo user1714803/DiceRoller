@@ -73,11 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
         if(input.getText().toString().equals(tv.getText().toString())) {
             message.setText("Congratulations");
+            count++;
+            TextView tv2 = this.findViewById(R.id.textView2);
+            tv2.setText(Integer.toString(count));
+
         } else {
             message.setText("Type 1 to 6");
         }
 
     }
+    // This is level 2 of Dice roller
 
 
 }
