@@ -11,11 +11,18 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView tc, message, counter;
+    EditText input;
+    // Button b1;
+    int count = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +68,16 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.textView);
 
         Random r = new Random();
-        int number = r.nextInt( 6);
+        int number = r.nextInt( 6 + 7 - 1) + 1;
         tv.setText(Integer.toString(number));
+
+        if(input.getText().toString().equals(tv.getText().toString())) {
+            message.setText("Congratulations");
+        } else {
+            message.setText("Type 1 to 6");
+        }
+
     }
+
+
 }
